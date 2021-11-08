@@ -255,12 +255,12 @@
             
             <script>
                 const cards = document.getElementsByClassName("card")
-                for (let i = 0; i < cards.length; i++) {
+                for (let i = 0; i < 2; i++) {
                     cards[i].addEventListener("mouseover", function() {
                         cards[i].nextElementSibling.style.marginLeft = "5px"
                     })
                 }
-                for (let i = 0; i < cards.length; i++) {
+                for (let i = 0; i < 2; i++) {
                     cards[i].addEventListener("mouseout", function() {
                         cards[i].nextElementSibling.style.marginLeft = "-130px"
                     })
