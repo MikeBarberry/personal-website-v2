@@ -16,31 +16,8 @@
                 border-radius: 10px;
             }
 
-            /* Greeting */
-            @keyframes colorchange {
-                0% {
-                    color: #AFF8DB;
-                    opacity: 1;
-                }
-                25% {
-                    color: #A79AFF;
-                    opacity: 0.4;
-                }
-                50% {
-                    color: #FFF5BA;
-                    opacity: 1;
-                }
-                75% {
-                    color: #6EB55F;
-                    opacity: 1;
-                }
-                100% {
-                    color: #FFABAB;
-                    opacity: 0.4;
-                }
-            }
-
-            #greeting::after {
+            /* Background */
+            #background::after {
                 content: "";
                 display: block;
                 height: 200px;
@@ -128,33 +105,22 @@
             });
         </script>
 
-        <!-- Greeting -->
+        <!-- Content -->
         <div class ="content" style="padding-left: 70px; padding-right: 30px;">
             <section 
                 style="
                     background: url(./static/dot_background.svg) repeat-x center top;
                     font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'; 
                     color: rgba(35, 33, 41, 0.8);
-                    border: 1px #dbf0ff;
+                    border: 3px #dbf0ff;
                     border-top-left-radius: 16px;
                     border-top-right-radius: 16px;
                     border-style: solid solid hidden;
-                    text-align: center;
                 "
             >
-            <div>
+                <div id="background" style="margin-bottom: 10px;">
 
-            </div>
-                <h4
-                    id="greeting" 
-                    style="padding: 20px 0px 20px 0px; font-weight: 400;">
-                        <span 
-                            style="animation: colorchange 5s infinite alternate;"
-                        >
-                            Hi,
-                        </span> 
-                        my name is Mike! I build software for the web.
-                </h4>
+                </div>
             </section>
 
             <!-- Projects -->
@@ -277,7 +243,6 @@
                 }
             </script>
 
-            <!--  I am here  -->
             
         </div>
 
