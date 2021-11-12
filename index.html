@@ -15,7 +15,7 @@
                 cursor: pointer;
             }
 
-            .header:hover {
+            .header:hover, .active {
                 background-color: var(--hover-color);
                 border-radius: 10px;
             }
@@ -66,6 +66,10 @@
             about.addEventListener('click', function(){
                 window.location.href="./about.html"  
             });
+            if (window.location.pathname === "/index.html") {
+                const home = document.getElementById("home")
+                home.className = "active"
+            }
             const contact = document.getElementById("contact");
             contact.addEventListener('click', function(){
                 window.location.href="mailto:mikebarberry@protonmail.com"
