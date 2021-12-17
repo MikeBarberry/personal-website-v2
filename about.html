@@ -106,10 +106,20 @@
             </div>
         </header>
 
+        <!-- Import Confetti from CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
         <script>
            const home = document.getElementById("home");
             home.addEventListener('click', function(){
-                window.location.href="./index.html"
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.3}
+                    });
+               setTimeout(() => {
+                    window.location.href="./index.html" 
+                }, 1500)   
             });
             if (window.location.pathname === "/about.html") {
                 const tab = document.getElementById("about")
