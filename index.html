@@ -114,8 +114,10 @@
                 const now = Date.now()
                 const lastFireworkDisplay = window.localStorage.getItem('fireworks')
 
-                if (lastFireworkDisplay === null || lastFireworkDisplay < (now - oneDay)) triggerFireworks()
-                window.localStorage.setItem('fireworks', now)
+                if (lastFireworkDisplay === null || lastFireworkDisplay < (now - oneDay)) {
+                    triggerFireworks()
+                    window.localStorage.setItem('fireworks', now)
+                }
             })
         </script>
 
