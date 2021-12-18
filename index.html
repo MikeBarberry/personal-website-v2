@@ -115,8 +115,11 @@
                 const lastFireworkDisplay = window.localStorage.getItem('fireworks')
 
                 if (lastFireworkDisplay === null || lastFireworkDisplay < (now - oneDay)) {
-                    triggerFireworks()
-                    window.localStorage.setItem('fireworks', now)
+                    // don't show full display on mobile 
+                    if (window.innerWidth > 400) {
+                        triggerFireworks()
+                        window.localStorage.setItem('fireworks', now)
+                    }
                 }
             })
         </script>
