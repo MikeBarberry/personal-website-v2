@@ -23,7 +23,7 @@
                 0% { transform: rotate(0deg); }
                 100% { transform: rotate(360deg); }
             }
-            
+
         </style>
     </head>
     <body style="padding: 0; margin: 0; box-sizing: border-box;">
@@ -56,6 +56,13 @@
                 </nav>
             </div>
         </header>
+
+        <!-- Alert -->
+        <div id="alert-container" style="position: absolute; margin-left: auto; margin-right: auto; top: 0; left: 0; right: 0; text-align: center; display: flex; justify-content: center; align-items: center; margin-top: 10px; visibility: hidden;">
+            <div class="alert" style="display: flex; justify-content: center; align-items: center; border-radius: 15px; background-color: #4BB543; opacity: .7; color: white; padding: 2px 10px 2px 10px;">
+                <p style="padding-right: 15px;">Thanks for visiting!</p>
+            </div>
+        </div>
 
         <!-- Import Confetti from CDN -->
         <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
@@ -111,10 +118,26 @@
                 const lastFireworkDisplay = window.localStorage.getItem('fireworks')
 
                 if (lastFireworkDisplay === null || lastFireworkDisplay < (now - oneDay)) {
-                    if (window.innerWidth > 400) {
-                        triggerFireworks()
-                        window.localStorage.setItem('fireworks', now)
-                    }
+                    triggerFireworks()
+                    window.localStorage.setItem('fireworks', now)
+
+                    const alertContainer = document.getElementById("alert-container")
+
+                    const handleMessage = () => {
+                        const hideMessage = () => {
+                            setTimeout(() => {
+                                alertContainer.style.visibility = 'hidden';
+                            }, 5500);
+                        };
+                        const showMessage = () => {
+                            setTimeout(() => {
+                                alertContainer.style.visibility = 'visible';
+                                hideMessage();
+                            }, 5500);
+                        };
+                        showMessage()
+                    };
+                    handleMessage()
                 }
             })
         </script>
